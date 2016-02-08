@@ -44,4 +44,24 @@ def probability(n):
 print probability(10000)
 
 
+import random 
+def probability(n):
+    count = 0
+    for i in range (n):
+        score = ''
+        shot=0
+        while shot < 20:
+            p = random.random()
+            shot+=1
+            if p > 0.5:
+                score+='1'
+            else:
+                score+='0'
+        t = score.count('11111')   
+        if t > 0:
+            count += 1
+    prop = (float(count)/int(n))*100
+    return prop 
+
+
 	
