@@ -59,15 +59,18 @@ raw_data = {'Index1': index1, 'Index2': index2, 'Length': lengths, 'String': str
 df = pd.DataFrame(raw_data, columns = ['Index1','Index2','Length','String'])
 df.to_csv('grades.csv')
 #Draw a table of lengths of the longest common subsequences for all pairs of strings
-table = BeautifulTable()
-table.column_headers 
+rows = []
+rows.append(['Ind.','0','1','2','3','4','5','6'])
 for x in range(0,7):
     this_row = []
+    this_row.append(x)
     for y in range(0,7):
-        this_len = lcs(listofstrings[x][1],listofstrings[y][1])
+        this_result = lcs(listofstrings[x][1],listofstrings[y][1])
+        this_len = this_result[0]
         this_row.append(this_len)
-    table.append_row(this_row)
-print table
+    rows.append(this_row)
+    
+print tabulate(rows)
 
 
 
